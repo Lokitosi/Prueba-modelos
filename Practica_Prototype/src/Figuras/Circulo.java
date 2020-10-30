@@ -14,6 +14,9 @@ public class Circulo implements Figuras_geometricas {
 	private int pos_x, pos_y;
 	private static Circulo instancia;
 
+	private Circulo() {
+        
+    }
 	
 	public static Circulo getInstancia()
     {

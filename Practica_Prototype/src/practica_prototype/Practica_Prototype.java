@@ -15,8 +15,8 @@ public class Practica_Prototype {
 	int op, posx, posy;
     Interfaz vent;
     Scanner sc= new Scanner(System.in);
-    Rectangulo rectangulo= new Rectangulo();
-    Circulo circulo = new Circulo();
+    Rectangulo rectangulo;
+    Circulo circulo;
     Figuras_geometricas geometrica;
     
     
@@ -24,12 +24,7 @@ public class Practica_Prototype {
     	geometrica  = null;
     	vent = new Interfaz(this);
     	vent.setVisible(true); 
-        circulo.setNombre("hahahah!");
-        circulo.tamaño(25,0);
-        rectangulo.setNombre("Rectangulo");
-        rectangulo.tamaño(18, 25);
-        rectangulo.getposicion(vent);
-        circulo.getposicion(vent);
+        
     }
 	
     
@@ -62,6 +57,22 @@ public class Practica_Prototype {
     public void clonarCirculo() {
     	geometrica = circulo.clonar();
     }
+    
+    public void crearRectangulo(int a , int b) {
+    	rectangulo= new Rectangulo();	
+        rectangulo.setNombre("Rectangulo");
+        rectangulo.tamaño(a, b);
+        rectangulo.getposicion(vent);
+        
+    }
+    
+    public void crearCirculo(int rad) {
+    	circulo = Circulo.getInstancia();
+    	circulo.setNombre("hahahah!");
+        circulo.tamaño(rad,0);
+        circulo.getposicion(vent);
+    }
+    
     
     public static void main(String[] args) {
         Practica_Prototype a = new Practica_Prototype();
